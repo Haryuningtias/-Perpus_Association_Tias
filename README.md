@@ -24,24 +24,24 @@ class LibraryMember:
     def borrow_book(self, book):
         if book.borrow():
             self.borrowed_books.append(book)
-            print(f"{self.name} has borrowed the book '{book.title}'.")
+            print(f"{self.name} telah meminjam buku '{book.title}'.")
         else:
-            print(f"The book '{book.title}' is not available for borrowing.")
+            print(f"Buku '{book.title}' tidak tersedia untuk dipinjam.")
 
     def return_book(self, book):
         if book in self.borrowed_books:
             self.borrowed_books.remove(book)
             book.return_book()
-            print(f"{self.name} has returned the book '{book.title}'.")
+            print(f"{self.name} telah mengembalikan buku itu '{book.title}'.")
         else:
-            print(f"The book '{book.title}' is not borrowed by {self.name}.")
+            print(f"Buku '{book.title}' tidak dipinjam oleh {self.name}.")
 
     def display_borrowed_books(self):
-        print(f"{self.name}'s borrowed books:")
+        print(f"{self.name}'s buku-buku yang dipinjam:")
         for book in self.borrowed_books:
-            print(f"Title: {book.title}")
-            print(f"Author: {book.author}")
-            print(f"Availability: {'Available' if book.is_available else 'Borrowed'}")
+            print(f"Judul: {book.title}")
+            print(f"Pengarang: {book.author}")
+            print(f"Ketersediaan: {'Available' if book.is_available else 'Borrowed'}")
             print()
 
 
